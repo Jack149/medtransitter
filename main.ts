@@ -5,6 +5,11 @@ radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 1) {
         basic.showIcon(IconNames.Sad)
     }
+    if (receivedNumber == 2) {
+        music.setBuiltInSpeakerEnabled(true)
+        music.setVolume(255)
+        soundExpression.giggle.play()
+    }
 })
 input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
@@ -14,8 +19,8 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onGesture(Gesture.TiltLeft, function () {
     radio.sendNumber(2)
-    basic.showIcon(IconNames.Yes)
-    basic.pause(5000)
+    basic.showIcon(IconNames.Heart)
+    basic.pause(2000)
     basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
@@ -26,10 +31,11 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onGesture(Gesture.TiltRight, function () {
     radio.sendNumber(2)
-    basic.showIcon(IconNames.Yes)
-    basic.pause(5000)
+    basic.showIcon(IconNames.Heart)
+    basic.pause(2000)
     basic.clearScreen()
 })
+radio.setTransmitPower(7)
 basic.forever(function () {
 	
 })
