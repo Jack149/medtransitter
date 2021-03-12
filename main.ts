@@ -15,6 +15,8 @@ input.onButtonPressed(Button.A, function () {
 input.onGesture(Gesture.TiltLeft, function () {
     radio.sendNumber(2)
     basic.showIcon(IconNames.Yes)
+    basic.pause(5000)
+    basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
@@ -25,6 +27,8 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.TiltRight, function () {
     radio.sendNumber(2)
     basic.showIcon(IconNames.Yes)
+    basic.pause(5000)
+    basic.clearScreen()
 })
 basic.forever(function () {
 	
