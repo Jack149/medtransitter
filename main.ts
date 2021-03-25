@@ -88,12 +88,15 @@ input.onGesture(Gesture.TiltRight, function () {
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     radio.sendNumber(5)
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 2; index++) {
         basic.showString("WATER ")
     }
 })
 radio.setTransmitPower(7)
 music.setBuiltInSpeakerEnabled(true)
 basic.forever(function () {
+	
+})
+control.inBackground(function () {
 	
 })
