@@ -17,6 +17,34 @@ radio.onReceivedNumber(function (receivedNumber) {
         basic.pause(2000)
         basic.clearScreen()
     }
+    if (receivedNumber == 3) {
+        music.setBuiltInSpeakerEnabled(true)
+        music.setVolume(255)
+        soundExpression.yawn.play()
+        basic.showString("WATER")
+        basic.pause(2000)
+        basic.clearScreen()
+    }
+    if (receivedNumber == 4) {
+        music.setBuiltInSpeakerEnabled(true)
+        for (let index = 0; index < 4; index++) {
+            music.setVolume(255)
+            soundExpression.slide.play()
+            basic.showString("CRASH")
+            basic.pause(200)
+            basic.clearScreen()
+        }
+    }
+    if (receivedNumber == 5) {
+        music.setBuiltInSpeakerEnabled(true)
+        music.setVolume(255)
+        soundExpression.spring.play()
+        for (let index = 0; index < 2; index++) {
+            basic.showString("WATER")
+            basic.pause(100)
+            basic.clearScreen()
+        }
+    }
 })
 input.onButtonPressed(Button.A, function () {
     radio.sendNumber(0)
@@ -43,7 +71,7 @@ input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
 })
 input.onGesture(Gesture.Shake, function () {
-    input.setAccelerometerRange(AcceleratorRange.FourG)
+    input.setAccelerometerRange(AcceleratorRange.TwoG)
     radio.sendNumber(4)
     for (let index = 0; index < 4; index++) {
         music.playMelody("C5 A B G A F G E ", 120)
@@ -58,7 +86,7 @@ input.onGesture(Gesture.TiltRight, function () {
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     radio.sendNumber(5)
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 3; index++) {
         basic.showString("WATER ")
     }
 })
