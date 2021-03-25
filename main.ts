@@ -31,7 +31,7 @@ radio.onReceivedNumber(function (receivedNumber) {
         music.setBuiltInSpeakerEnabled(true)
         for (let index = 0; index < 4; index++) {
             music.setVolume(255)
-            soundExpression.slide.play()
+            soundExpression.sad.play()
             basic.showString("CRASH")
             basic.pause(200)
             basic.clearScreen()
@@ -64,6 +64,14 @@ input.onGesture(Gesture.TiltLeft, function () {
     basic.showIcon(IconNames.Heart)
     basic.pause(2000)
     basic.clearScreen()
+})
+input.onSound(DetectedSound.Loud, function () {
+    input.setSoundThreshold(SoundThreshold.Loud, 128)
+    music.setBuiltInSpeakerEnabled(true)
+    led.plotBarGraph(
+    0,
+    0
+    )
 })
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
