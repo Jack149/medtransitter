@@ -66,12 +66,9 @@ input.onGesture(Gesture.TiltLeft, function () {
     basic.clearScreen()
 })
 input.onSound(DetectedSound.Loud, function () {
-    input.setSoundThreshold(SoundThreshold.Loud, 128)
-    music.setBuiltInSpeakerEnabled(true)
-    led.plotBarGraph(
-    input.soundLevel(),
-    255
-    )
+    while (true) {
+    	
+    }
 })
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
@@ -103,5 +100,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 radio.setTransmitPower(7)
 music.setBuiltInSpeakerEnabled(true)
 basic.forever(function () {
-	
+    input.setSoundThreshold(SoundThreshold.Loud, 255)
+    led.plotBarGraph(
+    input.soundLevel(),
+    255
+    )
 })
