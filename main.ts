@@ -69,8 +69,8 @@ input.onSound(DetectedSound.Loud, function () {
     input.setSoundThreshold(SoundThreshold.Loud, 128)
     music.setBuiltInSpeakerEnabled(true)
     led.plotBarGraph(
-    0,
-    0
+    input.soundLevel(),
+    255
     )
 })
 input.onButtonPressed(Button.B, function () {
@@ -103,8 +103,5 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 radio.setTransmitPower(7)
 music.setBuiltInSpeakerEnabled(true)
 basic.forever(function () {
-	
-})
-control.inBackground(function () {
 	
 })
