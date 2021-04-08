@@ -1,5 +1,6 @@
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
+        music.setVolume(255)
         music.playMelody("C5 B A G F E D C ", 120)
         basic.showString("HELP")
         basic.pause(2000)
@@ -66,9 +67,7 @@ input.onGesture(Gesture.TiltLeft, function () {
     basic.clearScreen()
 })
 input.onSound(DetectedSound.Loud, function () {
-    while (true) {
-    	
-    }
+	
 })
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
@@ -100,9 +99,5 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 radio.setTransmitPower(7)
 music.setBuiltInSpeakerEnabled(true)
 basic.forever(function () {
-    input.setSoundThreshold(SoundThreshold.Loud, 255)
-    led.plotBarGraph(
-    input.soundLevel(),
-    255
-    )
+	
 })
