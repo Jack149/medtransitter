@@ -60,15 +60,6 @@ input.onGesture(Gesture.LogoUp, function () {
     basic.pause(2000)
     basic.clearScreen()
 })
-input.onGesture(Gesture.TiltLeft, function () {
-    radio.sendNumber(2)
-    basic.showIcon(IconNames.Heart)
-    basic.pause(2000)
-    basic.clearScreen()
-})
-input.onSound(DetectedSound.Loud, function () {
-	
-})
 input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
     soundExpression.happy.play()
@@ -83,12 +74,6 @@ input.onGesture(Gesture.Shake, function () {
         music.playMelody("C5 A B G A F G E ", 120)
         basic.pause(500)
     }
-})
-input.onGesture(Gesture.TiltRight, function () {
-    radio.sendNumber(2)
-    basic.showIcon(IconNames.Heart)
-    basic.pause(2000)
-    basic.clearScreen()
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     radio.sendNumber(5)
