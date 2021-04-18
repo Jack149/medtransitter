@@ -64,13 +64,13 @@ input.onButtonPressed(Button.B, function () {
     radio.sendNumber(1)
     soundExpression.happy.play()
     basic.showString("DINNER")
-    basic.pause(5000)
+    basic.pause(1000)
     basic.clearScreen()
 })
 input.onGesture(Gesture.Shake, function () {
     input.setAccelerometerRange(AcceleratorRange.TwoG)
     radio.sendNumber(4)
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 2; index++) {
         music.playMelody("C5 A B G A F G E ", 120)
         basic.pause(500)
     }
@@ -81,6 +81,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         basic.showString("WATER ")
     }
 })
+radio.setGroup(128)
 radio.setTransmitPower(7)
 music.setBuiltInSpeakerEnabled(true)
 basic.forever(function () {
